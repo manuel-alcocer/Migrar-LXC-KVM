@@ -43,9 +43,9 @@ function ComprobarKVM(){
             virsh start $KVMDOM
             [[ ! $(virsh dominfo $KVMDOM | grep -Ei '.*state:[[:space:]]*running.*') ]] && sleep 5
         done
-            [[ ! $(virsh dominfo $KVMDOM | grep -Ei '.*state:[[:space:]]*running.*') ]] && \
-                printf 'Error iniciando la máquina KVM...\n' && \
-                exit 1
+        [[ ! $(virsh dominfo $KVMDOM | grep -Ei '.*state:[[:space:]]*running.*') ]] && \
+            printf 'Error iniciando la máquina KVM...\n' && \
+            exit 1
     fi
 }
 
